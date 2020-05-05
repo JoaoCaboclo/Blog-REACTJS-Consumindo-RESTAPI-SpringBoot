@@ -75,23 +75,27 @@ render() {
     return (
       <div>
 
-
           <h2 className="text-center">Posts</h2>
           <button className="btn btn-danger" onClick={() => this.addPost()}> Add Post</button>
           
           <table className="table table-striped">
               <thead>
                   <tr>
-                      <th className="hidden">Id</th>
+                      <th>Id</th>
                       <th>Title</th>
                       <th>content</th>
+                      <th>Category</th>
                  </tr>
               </thead>
               <tbody>
                   { this.state.lstPost.map(postItem =>
                               <tr key={postItem.id}>
+                                  <td>{postItem.id}</td>
                                   <td>{postItem.title}</td>
                                   <td>{postItem.content}</td>
+                                  {postItem.postCategory != null &&
+                                  <   td>{postItem.postCategory.nome}</td>
+                                   }
                                   <td>
                                       <button className="btn btn-success" onClick={() => this.deletePost(postItem.id)}> Delete</button>
                                   </td>
