@@ -4,6 +4,8 @@ import { BrowserRouter as Router, Route, Switch } from 'react-router-dom'
 import ListPostComponent from "./component/post/ListPostComponent";
 import AddPostComponent from "./component/post/AddPostComponent";
 import EditPostComponent from "./component/post/EditPostComponent";
+//import PostCategorySelection from "./component/postCategory/PostCategorySelection";
+
 
 function App() {
   return (

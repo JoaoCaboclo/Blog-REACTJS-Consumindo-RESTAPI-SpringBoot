@@ -73,6 +73,7 @@ render() {
 //    const { lstPost } = this.state;
 
     return (
+                       
       <div>
 
           <h2 className="text-center">Posts</h2>
@@ -89,13 +90,18 @@ render() {
               </thead>
               <tbody>
                   { this.state.lstPost.map(postItem =>
-                              <tr key={postItem.id}>
+                            
+                            <tr key={postItem.id}>
                                   <td>{postItem.id}</td>
                                   <td>{postItem.title}</td>
                                   <td>{postItem.content}</td>
                                   {postItem.postCategory != null &&
-                                  <   td>{postItem.postCategory.nome}</td>
-                                   }
+                                      <td>{postItem.postCategory.nome}</td>
+                                   } 
+                                  {postItem.postCategory == null &&
+                                     <td><span></span></td>
+                                   } 
+
                                   <td>
                                       <button className="btn btn-success" onClick={() => this.deletePost(postItem.id)}> Delete</button>
                                   </td>
